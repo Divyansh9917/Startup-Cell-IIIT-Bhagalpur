@@ -14,12 +14,45 @@ export default function Footer() {
           {/* Brand Col */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-teal-500 flex items-center justify-center font-bold text-teal-950 text-lg shadow-md">
-                SC
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0d4741] via-[#072e2b] to-[#031d1b] border border-amber-400/40 p-2 shadow-md">
+                <svg
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  className="w-full h-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <linearGradient id="footerLogoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#14b8a6" />
+                      <stop offset="50%" stopColor="#fbbf24" />
+                      <stop offset="100%" stopColor="#f59e0b" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5L20 3Z"
+                    stroke="url(#footerLogoGrad)"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="#072e2b"
+                    fillOpacity="0.7"
+                  />
+                  <path
+                    d="M20 9L25 18H21.5V27L15 20H18.5L20 9Z"
+                    fill="url(#footerLogoGrad)"
+                    stroke="#fbbf24"
+                    strokeWidth="0.5"
+                  />
+                  <circle cx="20" cy="31.5" r="1.6" fill="#fbbf24" />
+                </svg>
               </div>
-              <div>
-                <h3 className="text-white font-bold text-xl tracking-tight">Startup Cell</h3>
-                <p className="text-teal-300/80 text-xs font-medium uppercase tracking-wider">IIIT Bhagalpur</p>
+              <div className="flex flex-col text-left">
+                <h3 className="text-white font-extrabold text-xl tracking-tight leading-none">
+                  Startup<span className="text-amber-400">Cell</span>
+                </h3>
+                <p className="text-teal-300/80 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">
+                  IIIT Bhagalpur
+                </p>
               </div>
             </div>
             <p className="text-slate-300/80 text-sm leading-relaxed mb-6">
@@ -76,7 +109,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/#about" className="text-slate-300 hover:text-amber-300 transition-colors">
-                  About Us
+                  What is Startup Cell
                 </Link>
               </li>
               <li>

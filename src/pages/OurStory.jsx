@@ -1,37 +1,5 @@
 import { Link } from 'react-router-dom';
-
-const milestones = [
-  {
-    year: '2021',
-    title: 'The Inception & First Cohort',
-    desc: 'Founded with a mandate to cultivate entrepreneurial thinking within IIIT Bhagalpur. Launched the inaugural pre-incubation cohort with 12 student teams and built our first Maker Lab.',
-    badge: 'Foundation',
-  },
-  {
-    year: '2022',
-    title: 'Startup India & Grant Accreditations',
-    desc: 'Recognized as an official institutional incubation partner under Startup India and MSME schemes, unlocking seed grant disbursements of up to ₹5 Lakhs per student team.',
-    badge: 'Grants & Policy',
-  },
-  {
-    year: '2023',
-    title: 'First Angel Round & VC Pitch Days',
-    desc: 'Hosted the inaugural Eastern India Student Startup Summit. Four student ventures secured institutional seed rounds from angel syndicates and marquee venture funds.',
-    badge: 'VC Connect',
-  },
-  {
-    year: '2024',
-    title: 'Dedicated AI & Hardware Prototyping Center',
-    desc: 'Expanded with a 5,000 sq. ft. dedicated incubation wing featuring high-performance GPU compute clusters, precision 3D fabrication, and an automated IoT testing sandbox.',
-    badge: 'Infrastructure',
-  },
-  {
-    year: '2025 - Present',
-    title: 'Crossing $2.5M+ in Cumulative Capital',
-    desc: 'Over 120 startups mentored, 32 patents filed, and our incubated alumni employing over 400+ engineers across the country.',
-    badge: 'Global Scale',
-  },
-];
+import VerticalTimeline from '../components/VerticalTimeline';
 
 const values = [
   {
@@ -118,44 +86,20 @@ export default function OurStory() {
       </section>
 
       {/* Milestone Timeline */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold tracking-widest uppercase text-teal-700 bg-teal-100/60 px-3 py-1 rounded-full mb-3 inline-block">
-            Chronology
+            Chronology & Impact
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#072e2b] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#072e2b] tracking-tight mb-4">
             Key Milestones in Our Evolution
           </h2>
+          <p className="text-slate-600 text-sm sm:text-base">
+            Hover over any milestone card to preview historic cohort moments, incubator upgrades, and funding milestones.
+          </p>
         </div>
 
-        <div className="relative border-l-2 border-teal-600/30 ml-4 sm:ml-32 space-y-12">
-          {milestones.map((m) => (
-            <div key={m.year} className="relative pl-8 sm:pl-10 group">
-              {/* Year Marker on Left */}
-              <div className="sm:absolute sm:-left-32 sm:top-1 text-teal-800 font-extrabold text-lg sm:text-xl font-heading mb-1 sm:mb-0">
-                {m.year}
-              </div>
-
-              {/* Glowing Dot on Line */}
-              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-white shadow-md group-hover:scale-125 transition-transform" />
-
-              {/* Card */}
-              <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-lg border border-teal-900/10 transition-all duration-300">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-[#072e2b]">
-                    {m.title}
-                  </h3>
-                  <span className="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200/60">
-                    {m.badge}
-                  </span>
-                </div>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  {m.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <VerticalTimeline />
       </section>
 
       {/* Core Values */}

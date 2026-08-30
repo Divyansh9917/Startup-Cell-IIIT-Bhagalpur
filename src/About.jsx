@@ -51,11 +51,14 @@ export default function About() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-800/10 text-teal-800 text-xs font-bold tracking-widest uppercase mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-600" />
-            About Our Mission
+            Ecosystem Overview
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#072e2b] tracking-tight mb-6">
-            Empowering Tomorrow's Founders.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#072e2b] tracking-tight mb-4">
+            What is Startup Cell?
           </h2>
+          <p className="text-amber-700 font-semibold text-base sm:text-lg mb-4">
+            Empowering Tomorrow's Founders at IIIT Bhagalpur
+          </p>
           <p className="text-teal-900/80 text-base sm:text-lg leading-relaxed">
             The Startup Cell at IIIT Bhagalpur bridges the gap between academic innovation and commercial venture execution. We provide an end-to-end launchpad for student visionaries — offering early seed capital, specialized lab infrastructure, legal facilitation, and an inspiring ecosystem that turns ambitious ideas into scalable companies.
           </p>
