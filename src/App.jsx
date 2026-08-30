@@ -1,19 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Navbar from './Navbar';
+import Hero from './Hero';
+import About from './About';
+import Stats from './Stats';
+import DirectorDesk from './DirectorDesk';
+import Placeholder from './Placeholder';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div className='text-4xl'>
-        HELLO WORLD
-      </div>
-    </>
-  )
+    <div className="font-body">
+      <Navbar />
+      <Hero />
+      <About />
+      <Stats />
+      <DirectorDesk />
+      <Placeholder id="story" title="Our Story" />
+      <Placeholder id="gallery" title="Gallery" alt />
+      <Placeholder id="team" title="Our Team" />
+      <Placeholder id="incubation" title="Incubation Center" alt />
+    </div>
+  );
 }
-
-export default App
