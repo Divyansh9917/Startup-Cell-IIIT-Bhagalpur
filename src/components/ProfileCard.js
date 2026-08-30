@@ -1,4 +1,3 @@
-import React from 'react';
 
 function ProfileCard({name,role,year}){
   return(

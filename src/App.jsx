@@ -1,22 +1,38 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import Hero from './Hero';
-import About from './About';
-import Stats from './Stats';
-import DirectorDesk from './DirectorDesk';
-import Placeholder from './Placeholder';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+
+import Home from './pages/Home';
+import OurStory from './pages/OurStory';
+import Gallery from './pages/Gallery';
+import OurTeam from './pages/OurTeam';
+import IncubationCenter from './pages/IncubationCenter';
 
 export default function App() {
   return (
-    <div className="font-body">
-      <Navbar />
-      <Hero />
-      <About />
-      <Stats />
-      <DirectorDesk />
-      <Placeholder id="story" title="Our Story" />
-      <Placeholder id="gallery" title="Gallery" alt />
-      <Placeholder id="team" title="Our Team" />
-      <Placeholder id="incubation" title="Incubation Center" alt />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col bg-[#f8faf9] text-[#0f2922]">
+        <ScrollToTop />
+        <Navbar />
+        
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/story" element={<OurStory />} />
+            <Route path="/our-story" element={<OurStory />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/team" element={<OurTeam />} />
+            <Route path="/our-team" element={<OurTeam />} />
+            <Route path="/incubation" element={<IncubationCenter />} />
+            <Route path="/incubation-center" element={<IncubationCenter />} />
+            {/* Fallback to Home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
