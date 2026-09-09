@@ -135,16 +135,11 @@ function StatCard({ stat, shouldStart }) {
 
 export default function Stats() {
   const sectionRef = useRef(null);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [hasStarted, setHasStarted] = useState(() => typeof window !== 'undefined' && typeof IntersectionObserver === 'undefined');
 
   useEffect(() => {
     const currentElement = sectionRef.current;
-    if (!currentElement) return;
-
-    if (typeof IntersectionObserver === 'undefined') {
-      setHasStarted(true);
-      return;
-    }
+    if (!currentElement || typeof IntersectionObserver === 'undefined') return;
 
     // Trigger ONLY when the section scrolls into viewport
     const observer = new IntersectionObserver(

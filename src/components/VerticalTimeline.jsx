@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const timelineMilestones = [
+const timelineMilestones = [
   {
     id: 1,
     year: '2021',
