@@ -12,7 +12,7 @@ import IncubationCenter from './pages/IncubationCenter';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-[#f8faf9] text-[#0f2922]">
+      <div className="min-h-screen flex flex-col bg-[#EEE3D4] text-[#292825]">
         <ScrollToTop />
         <Navbar />
         

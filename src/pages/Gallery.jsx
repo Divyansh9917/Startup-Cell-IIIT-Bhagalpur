@@ -105,16 +105,16 @@ export default function Gallery() {
   return (
     <div className="pt-24 pb-20">
       {/* Header Banner */}
-      <section className="bg-gradient-to-b from-[#072e2b] via-[#0a3a35] to-[#f4f8f6] text-white pt-16 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#2F4156] via-[#3D536D] to-[#F5EFEB] text-white pt-16 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#567C8D]/30 border border-[#C8D9E6]/40 text-[#C8D9E6] text-xs font-bold uppercase tracking-widest mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#C8D9E6]" />
             Campus Life & Events
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-white">
-            Ecosystem <span className="text-amber-400">Gallery</span>
+            Ecosystem <span className="text-[#C8D9E6]">Gallery</span>
           </h1>
-          <p className="text-slate-200 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+          <p className="text-slate-100 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
             Capturing the passion, sleepless hackathon nights, breakthrough pitches, and milestones across our vibrant innovation community.
           </p>
         </div>
@@ -123,17 +123,17 @@ export default function Gallery() {
       {/* Gallery Filter & Grid Container */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 bg-white p-3 rounded-2xl shadow-md border border-teal-900/10 max-w-3xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 bg-white p-3 rounded-2xl shadow-md border border-[#C8D9E6] max-w-3xl mx-auto">
           {galleryCategories.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   isSelected
-                    ? 'bg-[#072e2b] text-amber-400 shadow-md'
-                    : 'text-slate-600 hover:text-teal-900 hover:bg-teal-50'
+                    ? 'bg-[#2F4156] text-white shadow-md'
+                    : 'text-[#2F4156]/80 hover:text-[#2F4156] hover:bg-[#F5EFEB]'
                 }`}
               >
                 {cat}
@@ -148,25 +148,25 @@ export default function Gallery() {
             <div
               key={item.id}
               onClick={() => setActiveModalImage(item)}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-teal-900/10 cursor-pointer hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-[#C8D9E6] hover:border-[#567C8D] cursor-pointer hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
             >
               {/* Image Preview Container */}
-              <div className="relative h-64 overflow-hidden bg-slate-900">
+              <div className="relative h-64 overflow-hidden bg-[#1E2B3A]">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#072e2b]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-xs font-semibold text-amber-300 flex items-center gap-1.5">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2F4156]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-xs font-semibold text-[#C8D9E6] flex items-center gap-1.5">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" />
                     </svg>
                     Click to enlarge preview
                   </span>
                 </div>
-                <span className="absolute top-3 right-3 text-xs font-semibold bg-[#072e2b]/90 text-amber-400 border border-teal-500/30 px-3 py-1 rounded-full backdrop-blur-md">
+                <span className="absolute top-3 right-3 text-xs font-semibold bg-[#2F4156]/90 text-[#C8D9E6] border border-[#567C8D]/40 px-3 py-1 rounded-full backdrop-blur-md">
                   {item.category}
                 </span>
               </div>
@@ -174,15 +174,15 @@ export default function Gallery() {
               {/* Card Meta */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-3 text-xs text-teal-700 font-semibold mb-2">
+                  <div className="flex items-center gap-3 text-xs text-[#567C8D] font-semibold mb-2">
                     <span>📅 {item.date}</span>
                     <span>•</span>
                     <span>📍 {item.location}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#072e2b] mb-2 group-hover:text-teal-700 transition-colors">
+                  <h3 className="text-lg font-bold text-[#2F4156] mb-2 group-hover:text-[#567C8D] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-[#2F4156]/75 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -195,16 +195,16 @@ export default function Gallery() {
       {/* Fullscreen Image Lightbox Modal */}
       {activeModalImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-[#1E2B3A]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in"
           onClick={() => setActiveModalImage(null)}
         >
           <div
-            className="relative max-w-4xl w-full bg-[#072e2b] rounded-2xl overflow-hidden border border-teal-600/40 shadow-2xl"
+            className="relative max-w-4xl w-full bg-[#2F4156] rounded-2xl overflow-hidden border border-[#567C8D]/40 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActiveModalImage(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-amber-400 hover:text-teal-950 flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-[#567C8D] flex items-center justify-center transition-colors cursor-pointer"
               aria-label="Close image modal"
             >
               ✕
@@ -218,17 +218,17 @@ export default function Gallery() {
 
             <div className="p-6 sm:p-8 text-white">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/15 border border-amber-400/30 px-3 py-1 rounded-full">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#C8D9E6] bg-[#567C8D]/30 border border-[#567C8D]/40 px-3 py-1 rounded-full">
                   {activeModalImage.category}
                 </span>
-                <span className="text-xs text-teal-200/80">
+                <span className="text-xs text-[#C8D9E6]/80">
                   {activeModalImage.date} • {activeModalImage.location}
                 </span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">
                 {activeModalImage.title}
               </h3>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
                 {activeModalImage.desc}
               </p>
             </div>

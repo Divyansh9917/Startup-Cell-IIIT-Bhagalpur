@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-  <rect width="48" height="48" rx="12" fill="#072e2b"/>
+  <rect width="48" height="48" rx="12" fill="#292825"/>
   <defs>
     <linearGradient id="scFaviconGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stopColor="#14b8a6" />
-      <stop offset="50%" stopColor="#fbbf24" />
-      <stop offset="100%" stopColor="#f59e0b" />
+      <stop offset="0%" stopColor="#B85C3A" />
+      <stop offset="100%" stopColor="#D8C5B0" />
     </linearGradient>
   </defs>
   <path
@@ -13,14 +12,14 @@
     strokeWidth="2.5"
     strokeLinecap="round"
     strokeLinejoin="round"
-    fill="#0d4741"
-    fillOpacity="0.8"
+    fill="#1E1D1B"
+    fillOpacity="0.85"
   />
   <path
     d="M24 12L29 21H25.5V30L19 23H22.5L24 12Z"
     fill="url(#scFaviconGrad)"
-    stroke="#fbbf24"
+    stroke="#D8C5B0"
     strokeWidth="0.5"
   />
-  <circle cx="24" cy="34.5" r="1.8" fill="#fbbf24" />
+  <circle cx="24" cy="34.5" r="1.8" fill="#D8C5B0" />
 </svg>

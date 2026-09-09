@@ -69,7 +69,7 @@ export default function VerticalTimeline() {
   return (
     <div className="relative w-full">
       {/* Central Vertical Timeline Track for Desktop */}
-      <div className="hidden lg:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-[3px] bg-gradient-to-b from-teal-500/20 via-amber-400 to-teal-500/20 shadow-[0_0_12px_rgba(251,191,36,0.3)] z-0 rounded-full" />
+      <div className="hidden lg:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-[3px] bg-gradient-to-b from-[#B85C3A]/20 via-[#B85C3A] to-[#B85C3A]/20 shadow-[0_0_12px_rgba(184,92,58,0.3)] z-0 rounded-full" />
 
       {/* Timeline Rows Container */}
       <div className="space-y-12 lg:space-y-20 relative z-10">
@@ -92,35 +92,35 @@ export default function VerticalTimeline() {
                     tabIndex={0}
                     className={`relative rounded-3xl p-7 transition-all duration-500 cursor-pointer border text-left outline-none ${
                       isActive
-                        ? 'bg-white shadow-2xl shadow-teal-950/15 border-amber-400 scale-[1.02] -translate-x-1'
-                        : 'bg-white/90 shadow-md hover:shadow-lg border-teal-900/10 hover:border-teal-400/40'
+                        ? 'bg-white shadow-2xl shadow-[#292825]/10 border-[#B85C3A] ring-2 ring-[#B85C3A]/20 scale-[1.02] -translate-x-1'
+                        : 'bg-white/95 shadow-xs hover:shadow-lg border-[#D8C5B0] hover:border-[#B85C3A]/60'
                     }`}
                   >
                     {/* Active Accent Glow Pill */}
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-2xl font-black text-amber-500 tracking-tight font-heading">
+                      <span className="text-2xl font-black text-[#292825] tracking-tight font-heading">
                         {item.year}
                       </span>
-                      <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200/70">
+                      <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#EEE3D4] text-[#292825] border border-[#D8C5B0]">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#072e2b] mb-1 leading-snug">
+                    <h3 className="text-xl font-bold text-[#292825] mb-1 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-semibold text-teal-700 mb-3">
+                    <p className="text-xs font-semibold text-[#B85C3A] mb-3">
                       {item.subtitle}
                     </p>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p className="text-[#292825]/80 text-sm leading-relaxed mb-4">
                       {item.desc}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-100">
+                    <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-[#D8C5B0]">
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] font-medium bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-md"
+                          className="text-[10px] font-medium bg-[#EEE3D4] text-[#292825] border border-[#D8C5B0] px-2.5 py-0.5 rounded-md"
                         >
                           #{tag}
                         </span>
@@ -128,7 +128,7 @@ export default function VerticalTimeline() {
                     </div>
 
                     {/* Interactive Hover Prompt Hint */}
-                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-amber-600">
+                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[#B85C3A]">
                       <span>Hover to view event showcase</span>
                       <span className="inline-block transition-transform duration-300">
                         →
@@ -140,11 +140,11 @@ export default function VerticalTimeline() {
                   <div
                     className={`relative rounded-3xl overflow-hidden border shadow-xl transition-all duration-500 ${
                       isActive
-                        ? 'opacity-100 scale-100 border-amber-400 shadow-2xl shadow-teal-950/20 ring-4 ring-amber-400/20'
-                        : 'opacity-40 scale-95 border-teal-900/10 hover:opacity-80'
+                        ? 'opacity-100 scale-100 border-[#B85C3A] shadow-2xl shadow-[#292825]/20 ring-4 ring-[#B85C3A]/20'
+                        : 'opacity-40 scale-95 border-[#D8C5B0] hover:opacity-80'
                     }`}
                   >
-                    <div className="relative h-64 overflow-hidden bg-slate-900">
+                    <div className="relative h-64 overflow-hidden bg-[#292825]">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -152,10 +152,10 @@ export default function VerticalTimeline() {
                           isActive ? 'scale-105' : 'scale-100'
                         }`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#072e2b]/90 via-[#072e2b]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#292825]/95 via-[#292825]/40 to-transparent" />
                       
                       {/* Floating Badge */}
-                      <div className="absolute top-3 left-3 bg-[#072e2b]/90 backdrop-blur-md border border-teal-500/30 text-amber-300 text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                      <div className="absolute top-3 left-3 bg-[#292825]/90 backdrop-blur-md border border-[#B85C3A]/40 text-[#D8C5B0] text-xs font-bold px-3 py-1 rounded-full shadow-md">
                         📅 {item.year} Showcase
                       </div>
 
@@ -164,7 +164,7 @@ export default function VerticalTimeline() {
                         <p className="text-sm font-bold text-white mb-0.5 leading-snug">
                           {item.caption}
                         </p>
-                        <p className="text-xs text-amber-300 font-medium">
+                        <p className="text-xs text-[#D8C5B0] font-medium">
                           ⚡ {item.metric}
                         </p>
                       </div>
@@ -178,8 +178,8 @@ export default function VerticalTimeline() {
                 <div
                   className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-500 shadow-lg ${
                     isActive
-                      ? 'bg-amber-400 text-teal-950 scale-125 ring-8 ring-amber-400/20 shadow-amber-400/40'
-                      : 'bg-white text-teal-900 border-2 border-teal-600/40 hover:scale-110'
+                      ? 'bg-[#B85C3A] text-white scale-125 ring-8 ring-[#B85C3A]/20 shadow-[#B85C3A]/40'
+                      : 'bg-white text-[#292825] border-2 border-[#D8C5B0] hover:scale-110'
                   }`}
                 >
                   <span className="tracking-tighter font-extrabold">{item.year.split(' ')[0]}</span>
@@ -194,41 +194,41 @@ export default function VerticalTimeline() {
                     tabIndex={0}
                     className={`relative rounded-3xl p-7 transition-all duration-500 cursor-pointer border text-left outline-none ${
                       isActive
-                        ? 'bg-white shadow-2xl shadow-teal-950/15 border-amber-400 scale-[1.02] translate-x-1'
-                        : 'bg-white/90 shadow-md hover:shadow-lg border-teal-900/10 hover:border-teal-400/40'
+                        ? 'bg-white shadow-2xl shadow-[#292825]/10 border-[#B85C3A] ring-2 ring-[#B85C3A]/20 scale-[1.02] translate-x-1'
+                        : 'bg-white/95 shadow-xs hover:shadow-lg border-[#D8C5B0] hover:border-[#B85C3A]/60'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-2xl font-black text-amber-500 tracking-tight font-heading">
+                      <span className="text-2xl font-black text-[#292825] tracking-tight font-heading">
                         {item.year}
                       </span>
-                      <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200/70">
+                      <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#EEE3D4] text-[#292825] border border-[#D8C5B0]">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#072e2b] mb-1 leading-snug">
+                    <h3 className="text-xl font-bold text-[#292825] mb-1 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-semibold text-teal-700 mb-3">
+                    <p className="text-xs font-semibold text-[#B85C3A] mb-3">
                       {item.subtitle}
                     </p>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p className="text-[#292825]/80 text-sm leading-relaxed mb-4">
                       {item.desc}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-100">
+                    <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-[#D8C5B0]">
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] font-medium bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-md"
+                          className="text-[10px] font-medium bg-[#EEE3D4] text-[#292825] border border-[#D8C5B0] px-2.5 py-0.5 rounded-md"
                         >
                           #{tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-amber-600">
+                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[#B85C3A]">
                       <span>Hover to view event showcase</span>
                       <span className="inline-block transition-transform duration-300">
                         ←
@@ -240,11 +240,11 @@ export default function VerticalTimeline() {
                   <div
                     className={`relative rounded-3xl overflow-hidden border shadow-xl transition-all duration-500 ${
                       isActive
-                        ? 'opacity-100 scale-100 border-amber-400 shadow-2xl shadow-teal-950/20 ring-4 ring-amber-400/20'
-                        : 'opacity-40 scale-95 border-teal-900/10 hover:opacity-80'
+                        ? 'opacity-100 scale-100 border-[#B85C3A] shadow-2xl shadow-[#292825]/20 ring-4 ring-[#B85C3A]/20'
+                        : 'opacity-40 scale-95 border-[#D8C5B0] hover:opacity-80'
                     }`}
                   >
-                    <div className="relative h-64 overflow-hidden bg-slate-900">
+                    <div className="relative h-64 overflow-hidden bg-[#292825]">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -252,9 +252,9 @@ export default function VerticalTimeline() {
                           isActive ? 'scale-105' : 'scale-100'
                         }`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#072e2b]/90 via-[#072e2b]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#292825]/95 via-[#292825]/40 to-transparent" />
 
-                      <div className="absolute top-3 left-3 bg-[#072e2b]/90 backdrop-blur-md border border-teal-500/30 text-amber-300 text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                      <div className="absolute top-3 left-3 bg-[#292825]/90 backdrop-blur-md border border-[#B85C3A]/40 text-[#D8C5B0] text-xs font-bold px-3 py-1 rounded-full shadow-md">
                         📅 {item.year} Showcase
                       </div>
 
@@ -262,7 +262,7 @@ export default function VerticalTimeline() {
                         <p className="text-sm font-bold text-white mb-0.5 leading-snug">
                           {item.caption}
                         </p>
-                        <p className="text-xs text-amber-300 font-medium">
+                        <p className="text-xs text-[#D8C5B0] font-medium">
                           ⚡ {item.metric}
                         </p>
                       </div>
@@ -272,13 +272,13 @@ export default function VerticalTimeline() {
               </div>
 
               {/* Mobile / Tablet View (< lg screens): Clean Stacked Timeline */}
-              <div className="lg:hidden relative pl-8 border-l-2 border-amber-400/70 ml-3">
+              <div className="lg:hidden relative pl-8 border-l-2 border-[#B85C3A]/70 ml-3">
                 {/* Node dot on line */}
                 <div
                   className={`absolute -left-[17px] top-4 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold shadow-md transition-all ${
                     isActive
-                      ? 'bg-amber-400 text-teal-950 ring-4 ring-amber-400/30'
-                      : 'bg-[#072e2b] text-white border border-teal-400/40'
+                      ? 'bg-[#B85C3A] text-white ring-4 ring-[#B85C3A]/30'
+                      : 'bg-[#292825] text-white border border-[#D8C5B0]/40'
                   }`}
                 >
                   {item.year.slice(2, 4)}
@@ -287,39 +287,39 @@ export default function VerticalTimeline() {
                 <div
                   onClick={() => setActiveHoverIndex(index)}
                   className={`bg-white rounded-2xl p-6 shadow-md border transition-all ${
-                    isActive ? 'border-amber-400 shadow-xl' : 'border-teal-900/10'
+                    isActive ? 'border-[#B85C3A] shadow-xl ring-2 ring-[#B85C3A]/20' : 'border-[#D8C5B0]'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xl font-black text-amber-500 font-heading">
+                    <span className="text-xl font-black text-[#292825] font-heading">
                       {item.year}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#EEE3D4] text-[#292825] border border-[#D8C5B0]">
                       {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#072e2b] mb-1">
+                  <h3 className="text-lg font-bold text-[#292825] mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-xs font-medium text-teal-700 mb-2">
+                  <p className="text-xs font-medium text-[#B85C3A] mb-2">
                     {item.subtitle}
                   </p>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-[#292825]/80 text-xs sm:text-sm leading-relaxed mb-4">
                     {item.desc}
                   </p>
 
                   {/* Responsive inline preview image */}
-                  <div className="rounded-xl overflow-hidden relative h-44 mb-3 border border-teal-900/10">
+                  <div className="rounded-xl overflow-hidden relative h-44 mb-3 border border-[#D8C5B0]">
                     <img
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#072e2b]/90 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#292825]/90 via-transparent to-transparent" />
                     <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
                       <p className="text-xs font-bold text-white">{item.caption}</p>
-                      <p className="text-[11px] text-amber-300">⚡ {item.metric}</p>
+                      <p className="text-[11px] text-[#D8C5B0]">⚡ {item.metric}</p>
                     </div>
                   </div>
 
@@ -327,7 +327,7 @@ export default function VerticalTimeline() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[9px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded"
+                        className="text-[9px] font-medium bg-[#EEE3D4] text-[#292825] border border-[#D8C5B0] px-2 py-0.5 rounded"
                       >
                         #{tag}
                       </span>
