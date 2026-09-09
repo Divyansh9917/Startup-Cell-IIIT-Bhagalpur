@@ -4,26 +4,28 @@ const incubationPrograms = [
   {
     title: 'Pre-Incubation (Ideation & MVP)',
     duration: '3 - 6 Months',
-    target: 'Early-stage student teams with a validated problem statement',
+    target: 'Early-stage student & researcher teams with a validated technical problem statement',
     features: [
-      'Dedicated ideation desks & high-speed internet',
-      'Guidance on Lean Canvas & Product-Market Fit',
-      'Maker Lab & 3D printer prototyping access',
-      'Bi-weekly milestone check-ins with faculty mentors',
+      '100% Zero-Equity student participation model',
+      'Dedicated Maker Lab & 3D rapid-prototyping access',
+      'Guidance on Lean Canvas, Market Validation & Product-Market Fit',
+      'Bi-weekly advisory reviews with Faculty Coordinator & Mentors',
+      'Free initial prior-art patent search & clearance assistance',
     ],
     grant: 'Up to ₹1,00,000 prototype micro-grant',
-    badge: 'Stage 1',
+    badge: 'Stage 1 (Ideation)',
   },
   {
     title: 'Full Incubation (Launch & Scale)',
     duration: '12 - 18 Months',
-    target: 'Startups with a working MVP seeking initial market traction',
+    target: 'Registered or incorporable startups with a working MVP seeking initial market traction',
     features: [
-      'Dedicated private cabin/cubicle in Incubation Hub',
-      'Free patent specification drafting & trademark filing',
-      '$100k+ AWS/GCP cloud & developer tooling credits',
-      'Company incorporation (Pvt Ltd) & compliance support',
-      'Direct introductions to VC funds & angel syndicates',
+      'Dedicated air-conditioned cubicle & 24/7 access in Incubation Wing',
+      'Full legal support for Private Limited company incorporation',
+      'Direct facilitation for ₹10 Lakhs Bihar Startup Policy seed fund',
+      '$100k+ developer perks (AWS Activate, GCP, Azure, GitHub Enterprise)',
+      'Free complete patent specification drafting by institutional patent attorneys',
+      'Quarterly presentation before the Incubation Advisory Committee',
     ],
     grant: 'Up to ₹10,00,000 seed funding allocation',
     badge: 'Stage 2 (Flagship)',
@@ -32,67 +34,71 @@ const incubationPrograms = [
   {
     title: 'Scale & Acceleration Track',
     duration: '6 - 12 Months',
-    target: 'Revenue-generating ventures raising institutional funding',
+    target: 'Revenue-generating or funded ventures raising follow-on institutional VC rounds',
     features: [
-      'Term sheet negotiation advisory & legal support',
-      'Access to international alumni founder networks',
-      'Demo Day pitch slots before Tier-1 VC funds',
-      'Enterprise sales matchmaking & corporate pilots',
+      'Direct pitch access to angel networks, micro-VCs, and seed funds',
+      'Assistance with term sheet negotiations and capitalization table advisory',
+      'Global alumni mentor matching with US & Indian tech founders',
+      'Corporate pilot matchmaking & enterprise government sales access',
     ],
-    grant: 'VC syndicate & follow-on co-investment',
-    badge: 'Stage 3',
+    grant: 'VC syndicate & follow-on co-investment matching',
+    badge: 'Stage 3 (Growth)',
   },
 ];
 
 const facilities = [
   {
-    title: '24/7 Co-working & Private Pods',
-    desc: 'Ergonomic seating, high-speed fiber internet, private conference booths, and round-the-clock lab access.',
+    title: '24/7 Co-Working & Private Pods',
+    desc: 'High-speed gigabit fiber internet, ergonomic workstations, private conference meeting rooms, and round-the-clock secure lab access.',
     icon: '🏢',
   },
   {
-    title: 'Rapid Prototyping & Maker Lab',
-    desc: 'Industrial 3D printers, laser cutters, oscilloscope test benches, and SMD soldering stations.',
+    title: 'Maker Lab & Rapid Prototyping',
+    desc: 'Industrial 3D printers, laser cutters, PCB micro-soldering stations, digital oscilloscopes, and robotics test beds.',
     icon: '🛠️',
   },
   {
     title: 'AI & GPU High-Compute Cluster',
-    desc: 'On-premise NVIDIA GPU nodes for model training, computer vision benchmarking, and deep learning experiments.',
+    desc: 'NVIDIA GPU compute nodes available for deep learning training, computer vision benchmarking, and large algorithmic simulations.',
     icon: '⚡',
   },
   {
-    title: 'Patent & Legal Advisory Clinic',
-    desc: 'Free patent search, prior art analysis, and provisional patent filing with registered institutional attorneys.',
+    title: 'Institutional IP & Legal Clinic',
+    desc: 'Comprehensive prior-art search, provisional and full patent drafting, trademarking, and copyright facilitation at zero cost to students.',
     icon: '⚖️',
   },
   {
-    title: 'Seed Funding & Grant Facilitation',
-    desc: 'Direct disbursement of institutional seed capital and fast-tracked government grants (TIDE 2.0, NIDHI-EIR).',
+    title: 'Government Seed Grant Facilitation',
+    desc: 'Assistance for Bihar Startup Policy (₹10L interest-free seed grant), MeitY TIDE 2.0, DST NIDHI-EIR (₹30,000/mo stipend), and SISFS.',
     icon: '💰',
   },
   {
-    title: '$100K+ Cloud & SaaS Perks',
-    desc: 'Generous credit packages from AWS Activate, Google for Startups, Microsoft Azure, MongoDB, and Stripe.',
+    title: '$100K+ Cloud & Developer Perks',
+    desc: 'Complimentary cloud credits from AWS Activate, Google for Startups, Microsoft for Startups, Stripe processing credits, and MongoDB Atlas.',
     icon: '☁️',
   },
 ];
 
 const faqs = [
   {
-    q: 'Who is eligible to apply for incubation at Startup Cell?',
-    a: 'Any current student, research scholar, alumnus, or faculty member of IIIT Bhagalpur (as well as collaborating external student teams with at least one IIITBH co-founder) can apply with an innovative concept.',
+    q: 'Who is eligible to apply for incubation at IIIT Bhagalpur Startup Cell?',
+    a: 'Any enrolled undergraduate, postgraduate, or doctoral student of IIIT Bhagalpur, faculty members, alumni, or external founding teams having at least one core co-founder from IIIT Bhagalpur are eligible to apply.',
   },
   {
-    q: 'Do I need a fully built product or company registered before applying?',
-    a: 'No! You can apply at the Ideation/Pre-Incubation stage with a prototype concept. We assist you with MVP development, customer validation, and company incorporation when you are ready.',
+    q: 'Do I need an already registered company to apply?',
+    a: 'No! You can apply at the Ideation / Pre-Incubation stage with just a prototype concept or project. Once your solution shows market promise, our incubation team assists you with company incorporation (Private Limited).',
   },
   {
-    q: 'How does the seed funding grant evaluation work?',
-    a: 'Selected incubatees present their business milestones and expenditure plans to our Incubation Advisory Committee during quarterly Pitch Days. Grants are milestone-disbursed.',
+    q: 'What is the equity policy for student startups?',
+    a: 'Pre-incubation is 100% zero-equity. For startups selected for full physical incubation and accessing substantial institutional seed capital/grants, a standard nominal equity policy (1% to 3%) applies in line with the National Innovation and Startup Policy (NISP).',
   },
   {
-    q: 'Does the incubation center take equity in student ventures?',
-    a: 'We operate on a student-first model. Pre-incubation is 100% zero-equity. For full incubation with substantial cash seed grants, standard nominal institutional equity policies (1-3%) apply according to institute incubation guidelines.',
+    q: 'How does seed funding disbursement work under Bihar Startup Policy?',
+    a: 'IIIT Bhagalpur acts as a recognized institutional incubation center. Selected student startups are recommended to the Department of Industries, Govt. of Bihar for interest-free seed grants of up to ₹10 Lakhs disbursed in structured tranches upon achieving milestones.',
+  },
+  {
+    q: 'Can hardware and robotics projects access testing equipment?',
+    a: 'Yes! The Startup Cell Maker Lab is equipped with 3D printers, sensor test rigs, micro-soldering equipment, and electronics oscilloscopes, backed by mechatronics and ECE faculty coordinators.',
   },
 ];
 
@@ -105,9 +111,10 @@ export default function IncubationCenter() {
     founderName: '',
     email: '',
     phone: '',
+    rollOrAffiliation: '',
     startupName: '',
     domain: 'Software / AI / SaaS',
-    stage: 'Ideation / Prototype',
+    stage: 'Pre-Incubation (Ideation & Prototype)',
     pitchSummary: '',
   });
 
@@ -123,9 +130,10 @@ export default function IncubationCenter() {
       founderName: '',
       email: '',
       phone: '',
+      rollOrAffiliation: '',
       startupName: '',
       domain: 'Software / AI / SaaS',
-      stage: 'Ideation / Prototype',
+      stage: 'Pre-Incubation (Ideation & Prototype)',
       pitchSummary: '',
     });
   };
@@ -136,34 +144,36 @@ export default function IncubationCenter() {
       <section className="bg-gradient-to-b from-[#EEE3D4] via-[#E5D6C5] to-[#EEE3D4] text-[#292825] pt-16 pb-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden border-b border-[#D8C5B0]">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D8C5B0]/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#B85C3A]/10 rounded-full blur-3xl pointer-events-none" />
+        
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D8C5B0] text-[#B85C3A] text-xs font-bold uppercase tracking-widest mb-6 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-[#B85C3A] animate-pulse" />
-            World-Class Infrastructure & Support
+            Incubation Centre • IIIT Bhagalpur
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-[#292825]">
-            Incubation <span className="text-[#B85C3A]">Center</span>
+            Incubation <span className="text-[#B85C3A]">Centre</span>
           </h1>
-          <p className="text-[#292825]/80 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-            The epicenter of startup creation at IIIT Bhagalpur. We provide seed grants up to ₹10 Lakhs, Maker Labs, legal backing, and institutional mentorship to scale your venture.
+          <p className="text-[#292825]/85 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+            The epicenter of venture creation at IIIT Bhagalpur. Offering seed grants up to ₹10 Lakhs, 24/7 Maker Labs, legal and patent backing, and institutional mentorship to scale your enterprise.
           </p>
           <button
             onClick={() => setIsApplyModalOpen(true)}
-            className="px-8 py-4 rounded-full font-bold text-base bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-xl shadow-[#141312]/20 hover:-translate-y-0.5 transition-all cursor-pointer"
+            className="px-8 py-4 rounded-full font-bold text-base bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer inline-flex items-center gap-2"
           >
-            Apply for Cohort Incubation →
+            <span>Apply for Incubation Support</span>
+            <span>→</span>
           </button>
         </div>
       </section>
 
-      {/* Incubation Programs / Tiers */}
+      {/* Incubation Tracks */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 mb-24 relative z-20">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold tracking-widest uppercase text-[#292825] bg-[#EEE3D4] border border-[#D8C5B0] px-3.5 py-1 rounded-full mb-3 inline-block shadow-2xs">
-            Tailored Incubation Tracks
+            Structured Pathways
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#292825] tracking-tight">
-            Programs Designed for Every Stage
+            Incubation Tracks Tailored for Founders
           </h2>
         </div>
 
@@ -228,16 +238,12 @@ export default function IncubationCenter() {
                     prog.highlight ? 'text-[#D8C5B0]' : 'text-[#292825]'
                   }`}
                 >
-                  Program Offerings:
+                  Key Program Offerings:
                 </h4>
                 <ul className="space-y-3 text-sm mb-8">
                   {prog.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span
-                        className={`shrink-0 font-bold ${
-                          prog.highlight ? 'text-[#B85C3A]' : 'text-[#B85C3A]'
-                        }`}
-                      >
+                      <span className="shrink-0 font-bold text-[#B85C3A]">
                         ✓
                       </span>
                       <span className={prog.highlight ? 'text-[#D8C5B0]/90' : 'text-[#292825]/80'}>
@@ -252,7 +258,7 @@ export default function IncubationCenter() {
                 onClick={() => setIsApplyModalOpen(true)}
                 className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all cursor-pointer ${
                   prog.highlight
-                    ? 'bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-lg shadow-[#141312]/30'
+                    ? 'bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-md'
                     : 'bg-[#292825] text-white hover:bg-[#3D3B36] shadow-sm'
                 }`}
               >
@@ -268,10 +274,10 @@ export default function IncubationCenter() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold tracking-widest uppercase text-[#292825] bg-[#EEE3D4] border border-[#D8C5B0] px-3.5 py-1 rounded-full mb-3 inline-block shadow-2xs">
-              State-of-the-Art Infrastructure
+              Campus Infrastructure
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#292825] tracking-tight">
-              Incubation Facilities & Founder Perks
+              State-of-the-Art Incubation Facilities
             </h2>
           </div>
 
@@ -302,7 +308,7 @@ export default function IncubationCenter() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-bold tracking-widest uppercase text-[#292825] bg-[#EEE3D4] border border-[#D8C5B0] px-3.5 py-1 rounded-full mb-3 inline-block shadow-2xs">
-            Seamless Onboarding
+            Selection Journey
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#292825] tracking-tight">
             How to Get Incubated in 4 Steps
@@ -311,10 +317,10 @@ export default function IncubationCenter() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
-            { step: '01', title: 'Submit Pitch', desc: 'Fill out the online application with your team info and concept summary.' },
-            { step: '02', title: 'Internal Review', desc: 'Faculty and domain experts evaluate novelty, market potential, and tech feasibility.' },
-            { step: '03', title: 'Pitch Day', desc: 'Present a 10-minute live demo and slide pitch before the incubation board.' },
-            { step: '04', title: 'Onboarding & Grants', desc: 'Sign incubation MoU, claim your lab space, and receive initial grant tranches.' },
+            { step: '01', title: 'Submit Concept', desc: 'Complete the online application form summarizing your team background and value proposition.' },
+            { step: '02', title: 'Technical Screening', desc: 'Faculty coordinators evaluate problem validity, novelty, and technical feasibility.' },
+            { step: '03', title: 'Advisory Pitch Day', desc: 'Present a 10-minute live demo and slide presentation to the Incubation Advisory Committee.' },
+            { step: '04', title: 'MoU & Grant Tranche', desc: 'Sign institutional incubation MoU, claim dedicated lab workspace, and receive grant tranches.' },
           ].map((item) => (
             <div key={item.step} className="bg-white rounded-2xl p-6 shadow-xs border border-[#D8C5B0] text-center relative">
               <span className="w-10 h-10 rounded-full bg-[#B85C3A] text-white font-extrabold text-sm flex items-center justify-center mx-auto mb-4 shadow-sm">
@@ -331,7 +337,7 @@ export default function IncubationCenter() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold tracking-widest uppercase text-[#292825] bg-[#EEE3D4] border border-[#D8C5B0] px-3.5 py-1 rounded-full mb-3 inline-block shadow-2xs">
-            Clear Answers
+            Clarifications
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#292825] tracking-tight">
             Frequently Asked Questions
@@ -369,11 +375,11 @@ export default function IncubationCenter() {
       {/* Application Form Modal */}
       {isApplyModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[#292825]/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-in fade-in"
+          className="fixed inset-0 z-50 bg-[#292825]/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
           onClick={() => setIsApplyModalOpen(false)}
         >
           <div
-            className="relative max-w-xl w-full bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-[#D8C5B0] my-8"
+            className="relative max-w-xl w-full bg-white rounded-3xl p-7 sm:p-9 shadow-2xl border border-[#D8C5B0] my-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -385,12 +391,12 @@ export default function IncubationCenter() {
 
             {submitted ? (
               <div className="text-center py-8">
-                <div className="w-16 h-16 rounded-full bg-[#D8C5B0] text-[#292825] font-extrabold text-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-[#EEE3D4] text-[#B85C3A] font-extrabold text-2xl flex items-center justify-center mx-auto mb-4 border border-[#D8C5B0]">
                   ✓
                 </div>
                 <h3 className="text-2xl font-bold text-[#292825] mb-2">Application Submitted!</h3>
                 <p className="text-[#292825]/80 text-sm leading-relaxed mb-6">
-                  Thank you for applying to the Incubation Center at IIIT Bhagalpur. Our incubation panel will review your pitch and reach out within 5-7 business days.
+                  Thank you for applying to the Incubation Centre at IIIT Bhagalpur. Our incubation panel will review your pitch and reach out via institutional email within 5 business days.
                 </p>
                 <button
                   onClick={handleReset}
@@ -401,19 +407,19 @@ export default function IncubationCenter() {
               </div>
             ) : (
               <div>
-                <div className="mb-6">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#292825] bg-[#EEE3D4] border border-[#D8C5B0] px-2.5 py-1 rounded-md mb-2 inline-block">
-                    Official Incubation Cohort
+                <div className="mb-6 text-left">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#B85C3A] bg-[#EEE3D4] border border-[#D8C5B0] px-2.5 py-1 rounded-md mb-2 inline-block">
+                    Official Incubation Application
                   </span>
                   <h3 className="text-2xl font-extrabold text-[#292825]">
                     Apply for Incubation Support
                   </h3>
                   <p className="text-[#6F6B5E] text-xs mt-1">
-                    Fill in your venture details to start your incubation review.
+                    Startup Cell & Incubation Centre • IIIT Bhagalpur
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                <form onSubmit={handleSubmit} className="space-y-3.5 text-left">
                   <div>
                     <label className="block text-xs font-semibold text-[#292825] mb-1">
                       Lead Founder Name *
@@ -424,14 +430,14 @@ export default function IncubationCenter() {
                       placeholder="e.g. Aarav Sharma"
                       value={formData.founderName}
                       onChange={(e) => setFormData({ ...formData, founderName: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-[#292825] mb-1">
-                        College / Institutional Email *
+                        Institutional Email *
                       </label>
                       <input
                         required
@@ -439,7 +445,7 @@ export default function IncubationCenter() {
                         placeholder="name@iiitbh.ac.in"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
                       />
                     </div>
                     <div>
@@ -452,8 +458,37 @@ export default function IncubationCenter() {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
                       />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-[#292825] mb-1">
+                        Roll No. / Affiliation
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="e.g. 2201010ECE / Alum"
+                        value={formData.rollOrAffiliation}
+                        onChange={(e) => setFormData({ ...formData, rollOrAffiliation: e.target.value })}
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-[#292825] mb-1">
+                        Target Track
+                      </label>
+                      <select
+                        value={formData.stage}
+                        onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 bg-[#F7F1E8] text-[#292825]"
+                      >
+                        <option>Pre-Incubation (Ideation & Prototype)</option>
+                        <option>Full Incubation (Launch & Seed Fund)</option>
+                        <option>Scale & Acceleration Track</option>
+                      </select>
                     </div>
                   </div>
 
@@ -464,46 +499,11 @@ export default function IncubationCenter() {
                     <input
                       required
                       type="text"
-                      placeholder="e.g. QuantumNeural AI"
+                      placeholder="e.g. RoboKriti Dynamics"
                       value={formData.startupName}
                       onChange={(e) => setFormData({ ...formData, startupName: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
                     />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-[#292825] mb-1">
-                        Venture Domain
-                      </label>
-                      <select
-                        value={formData.domain}
-                        onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 bg-[#F7F1E8] text-[#292825]"
-                      >
-                        <option>Software / AI / SaaS</option>
-                        <option>Hardware / IoT / Robotics</option>
-                        <option>CleanTech & Energy</option>
-                        <option>FinTech / EdTech</option>
-                        <option>BioTech / HealthTech</option>
-                        <option>Other / Open Innovation</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-[#292825] mb-1">
-                        Current Stage
-                      </label>
-                      <select
-                        value={formData.stage}
-                        onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 bg-[#F7F1E8] text-[#292825]"
-                      >
-                        <option>Ideation / Concept</option>
-                        <option>Prototype / Lab MVP</option>
-                        <option>Beta Testing with Users</option>
-                        <option>Early Revenue Traction</option>
-                      </select>
-                    </div>
                   </div>
 
                   <div>
@@ -513,10 +513,10 @@ export default function IncubationCenter() {
                     <textarea
                       required
                       rows={3}
-                      placeholder="Describe what problem you are solving, target market, and technical advantage..."
+                      placeholder="Describe the problem, target audience, technology used, and required incubation support..."
                       value={formData.pitchSummary}
                       onChange={(e) => setFormData({ ...formData, pitchSummary: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      className="w-full px-3.5 py-2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
                     />
                   </div>
 
@@ -524,7 +524,7 @@ export default function IncubationCenter() {
                     type="submit"
                     className="w-full py-3.5 rounded-xl font-bold text-sm bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-md transition-all mt-2 cursor-pointer"
                   >
-                    Submit Application for Review →
+                    Submit Application for Screening →
                   </button>
                 </form>
               </div>

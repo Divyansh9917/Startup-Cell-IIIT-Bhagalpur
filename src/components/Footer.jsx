@@ -5,12 +5,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1E1D1B] text-[#D8C5B0] border-t border-[#3D3B36] relative overflow-hidden">
-      {/* Subtle ambient lighting behind footer */}
+      {/* Ambient background glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#B85C3A]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-96 h-96 bg-[#D8C5B0]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 pt-16 pb-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 text-left">
           {/* Brand Col */}
           <div>
             <div className="flex items-center gap-3 mb-5">
@@ -46,16 +46,16 @@ export default function Footer() {
                 </svg>
               </div>
               <div className="flex flex-col text-left">
-                <h3 className="text-white font-extrabold text-xl tracking-tight leading-none">
+                <h3 className="text-white font-extrabold text-lg tracking-tight leading-none">
                   Startup<span className="text-[#B85C3A]">Cell</span>
                 </h3>
-                <p className="text-[#D8C5B0]/90 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">
+                <p className="text-[#D8C5B0]/90 text-[10px] font-bold uppercase tracking-[0.15em] mt-1">
                   IIIT Bhagalpur
                 </p>
               </div>
             </div>
-            <p className="text-[#D8C5B0]/80 text-sm leading-relaxed mb-6">
-              Igniting the entrepreneurial spirit of students through hands-on mentorship, seed funding, state-of-the-art incubation, and industry connections.
+            <p className="text-[#D8C5B0]/80 text-xs sm:text-sm leading-relaxed mb-6">
+              Empowering student visionaries and tech researchers at IIIT Bhagalpur to transform lab curiosity into venture-backed scalable enterprises.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -96,11 +96,11 @@ export default function Footer() {
 
           {/* Quick Navigation */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4 tracking-wide flex items-center gap-2">
+            <h4 className="text-white font-semibold text-sm sm:text-base mb-4 tracking-wide flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#B85C3A]" />
               Quick Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link to="/" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
                   Home
@@ -108,81 +108,81 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/#about" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
-                  What is Startup Cell
-                </Link>
-              </li>
-              <li>
-                <Link to="/#director" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
-                  Director's Desk
-                </Link>
-              </li>
-              <li>
-                <Link to="/story" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
-                  Our Story & Journey
-                </Link>
-              </li>
-              <li>
-                <Link to="/gallery" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
-                  Event Gallery
-                </Link>
-              </li>
-              <li>
-                <Link to="/team" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
-                  Core Team & Mentors
+                  About the Cell
                 </Link>
               </li>
               <li>
                 <Link to="/incubation" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
-                  Incubation Center
+                  Incubation Tracks & Labs
+                </Link>
+              </li>
+              <li>
+                <Link to="/startups" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors font-semibold text-white">
+                  Incubated Startups (Portfolio)
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
+                  Events & Hackathons
+                </Link>
+              </li>
+              <li>
+                <Link to="/team" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
+                  Leadership & Team
+                </Link>
+              </li>
+              <li>
+                <Link to="/story" className="text-[#D8C5B0]/80 hover:text-[#B85C3A] transition-colors">
+                  Our Evolution & Story
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Programs & Perks */}
+          {/* Government Affiliations & Policies */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4 tracking-wide flex items-center gap-2">
+            <h4 className="text-white font-semibold text-sm sm:text-base mb-4 tracking-wide flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#B85C3A]" />
-              Ecosystem Programs
+              Policy & Frameworks
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#D8C5B0]/85">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-[#D8C5B0]/85">
               <li className="flex items-center gap-2">
-                <span className="text-[#B85C3A]">✓</span> Pre-Incubation MVP Track
+                <span className="text-[#B85C3A]">✓</span> MoE Innovation Cell (MIC)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#B85C3A]">✓</span> Up to ₹10L Seed Capital
+                <span className="text-[#B85C3A]">✓</span> Institution's Innovation Council (IIC)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#B85C3A]">✓</span> Patent & Legal Filing Support
+                <span className="text-[#B85C3A]">✓</span> National Innovation & Startup Policy (NISP)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#B85C3A]">✓</span> $100k+ Cloud & Tool Credits
+                <span className="text-[#B85C3A]">✓</span> Bihar Startup Policy 2022 (₹10L Grant)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#B85C3A]">✓</span> Annual Demo Day & Investor Pitch
+                <span className="text-[#B85C3A]">✓</span> MeitY TIDE 2.0 Scheme
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-[#B85C3A]">✓</span> 24/7 Co-working & Hardware Lab
+                <span className="text-[#B85C3A]">✓</span> DST NIDHI-EIR Fellowship
               </li>
             </ul>
           </div>
 
           {/* Contact & Hub */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4 tracking-wide flex items-center gap-2">
+            <h4 className="text-white font-semibold text-sm sm:text-base mb-4 tracking-wide flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#B85C3A]" />
-              Contact & Hub
+              Incubation Hub Contact
             </h4>
-            <div className="space-y-3 text-sm text-[#D8C5B0]/85">
+            <div className="space-y-3 text-xs sm:text-sm text-[#D8C5B0]/85">
               <p className="flex items-start gap-2.5">
-                <svg className="w-5 h-5 text-[#B85C3A] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#B85C3A] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Indian Institute of Information Technology Bhagalpur, Bihar - 813210</span>
+                <span>IIIT Bhagalpur, Sabour, Bhagalpur, Bihar - 813210</span>
               </p>
               <p className="flex items-center gap-2.5">
-                <svg className="w-5 h-5 text-[#B85C3A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#B85C3A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <a href="mailto:startupcell@iiitbh.ac.in" className="hover:text-[#B85C3A] transition-colors">
@@ -190,19 +190,19 @@ export default function Footer() {
                 </a>
               </p>
               <p className="flex items-center gap-2.5">
-                <svg className="w-5 h-5 text-[#B85C3A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#B85C3A] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Mon - Sat: 9:00 AM – 9:00 PM</span>
+                <span>Maker Lab: 24/7 for Incubatees</span>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom Bar */}
         <div className="pt-8 mt-8 border-t border-[#3D3B36] flex flex-col sm:flex-row items-center justify-between text-xs text-[#D8C5B0]/70 gap-4">
-          <p>© {currentYear} Startup Cell, IIIT Bhagalpur. All rights reserved.</p>
-          <p className="text-[#B85C3A]">Building the next generation of deep-tech and consumer ventures.</p>
+          <p>© {currentYear} Startup Cell & Incubation Centre, Indian Institute of Information Technology Bhagalpur. All rights reserved.</p>
+          <p className="text-[#B85C3A]">An Institute of National Importance under Ministry of Education, Govt. of India</p>
         </div>
       </div>
     </footer>

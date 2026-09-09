@@ -2,98 +2,97 @@ import { useState } from 'react';
 
 const teamCategories = [
   'All',
-  'Faculty Advisory',
-  'Student Executive Leads',
-  'Incubation & Tech Leads',
-  'Events & Outreach',
+  'Institutional Leadership',
+  'Faculty Coordinators',
+  'Student Executive Council',
+  'Technical & Maker Lab',
 ];
 
 const teamMembers = [
   {
     id: 1,
-    name: 'Dr. Anjali Mehra',
-    role: 'Director & Head of Incubation',
-    category: 'Faculty Advisory',
-    department: 'Department of Computer Science & Engineering',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
-    bio: 'Pioneering technology entrepreneurship, patent commercialization, and institutional industry partnerships at IIIT Bhagalpur.',
-    linkedin: 'https://linkedin.com',
-    email: 'director.incubation@iiitbh.ac.in',
+    name: 'Prof. (Dr.) Pradeep Kumar Jain',
+    role: 'Director & Chief Patron',
+    category: 'Institutional Leadership',
+    department: 'Directorate • IIIT Bhagalpur',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80',
+    bio: 'Championing technology entrepreneurship, academic-industry convergence, and indigenous deep-tech venture creation at IIIT Bhagalpur.',
+    email: 'director@iiitbh.ac.in',
   },
   {
     id: 2,
-    name: 'Dr. Rajesh Verma',
-    role: 'Chief Faculty Advisor (IP & Research)',
-    category: 'Faculty Advisory',
-    department: 'Electronics & Communication Engineering',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80',
-    bio: 'Mentoring hardware deep-tech founders on semiconductor systems, robotics, and patent drafting.',
+    name: 'Dr. Gaurav Kumar',
+    role: 'Faculty In-Charge, Incubation & Startup Cell',
+    category: 'Faculty Coordinators',
+    department: 'Department of Computer Science & Engineering',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    bio: 'Spearheading institutional incubation policies, startup cohort admissions, and government grant schemes (TIDE 2.0 & Bihar Startup Policy).',
+    email: 'incubation.head@iiitbh.ac.in',
     linkedin: 'https://linkedin.com',
-    email: 'rajesh.verma@iiitbh.ac.in',
   },
   {
     id: 3,
-    name: 'Aarav Sharma',
-    role: 'President, Student Startup Cell',
-    category: 'Student Executive Leads',
-    department: 'B.Tech CSE • Final Year',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
-    bio: 'Founder of an AI dev-tool startup; spearheading ecosystem strategy, mentor matching, and VC networking.',
+    name: 'Dr. Rajesh Verma',
+    role: 'Faculty Coordinator (IPR & Hardware Prototyping)',
+    category: 'Faculty Coordinators',
+    department: 'Electronics & Communication Engineering',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80',
+    bio: 'Guiding hardware robotics startups on embedded PCB design, sensor telemetry, and institutional patent drafting.',
+    email: 'ipr.cell@iiitbh.ac.in',
     linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
   },
   {
     id: 4,
-    name: 'Priya Nambiar',
-    role: 'Vice President & Operations Lead',
-    category: 'Student Executive Leads',
-    department: 'B.Tech ECE • Final Year',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
-    bio: 'Overseeing day-to-day incubation cohort logistics, budget allocations, and inter-collegiate partnerships.',
+    name: 'Aarav Sharma',
+    role: 'President, Student Startup Cell',
+    category: 'Student Executive Council',
+    department: 'B.Tech CSE • Final Year',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    bio: 'Founder of an AI dev-tool venture; coordinating campus startup initiatives, investor networking, and student founder mentorship.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
   },
   {
     id: 5,
-    name: 'Rohan Deshmukh',
-    role: 'Technical & Prototyping Lead',
-    category: 'Incubation & Tech Leads',
-    department: 'B.Tech Mechatronics • 3rd Year',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-    bio: 'Managing the Maker Lab, 3D printing equipment, server clusters, and hardware MVP reviews for incubatees.',
+    name: 'Priya Nambiar',
+    role: 'Vice President & Operations Lead',
+    category: 'Student Executive Council',
+    department: 'B.Tech ECE • Final Year',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
+    bio: 'Managing cohort onboarding logistics, incubator desk allocations, and inter-collegiate innovation partnerships.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
   },
   {
     id: 6,
-    name: 'Sneha Roy',
-    role: 'Incubation & Seed Fund Coordinator',
-    category: 'Incubation & Tech Leads',
-    department: 'B.Tech CSE • 3rd Year',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80',
-    bio: 'Coordinating government grant applications (TIDE 2.0, NIDHI) and seed milestone disbursements.',
+    name: 'Rohan Deshmukh',
+    role: 'Technical & Maker Lab Lead',
+    category: 'Technical & Maker Lab',
+    department: 'B.Tech Mechatronics • 3rd Year',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    bio: 'Supervising 3D printing equipment, laser cutters, oscilloscope benches, and embedded hardware MVP development for incubatees.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
   },
   {
     id: 7,
-    name: 'Vikramaditya Bose',
-    role: 'Head of Hackathons & Events',
-    category: 'Events & Outreach',
-    department: 'B.Tech AI & Data Science • 3rd Year',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-    bio: 'Organizing flagship hackathons, ideation boot camps, founder fireside sessions, and annual demo days.',
+    name: 'Sneha Roy',
+    role: 'Seed Grants & Incubation Coordinator',
+    category: 'Technical & Maker Lab',
+    department: 'B.Tech CSE • 3rd Year',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80',
+    bio: 'Assisting student teams with Bihar Startup Policy application drafting and milestone expense accounting.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
   },
   {
     id: 8,
-    name: 'Ananya Gupta',
-    role: 'PR & Corporate Relations Lead',
-    category: 'Events & Outreach',
-    department: 'B.Tech CSE • 2nd Year',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
-    bio: 'Managing brand communications, investor outreach, sponsor partnerships, and press releases.',
+    name: 'Vikramaditya Bose',
+    role: 'Head of Hackathons & E-Summit',
+    category: 'Student Executive Council',
+    department: 'B.Tech AI & Data Science • 3rd Year',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+    bio: 'Curating flagship 48-hour ideathons, founder fireside sessions, and the annual Eastern India E-Summit.',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
   },
@@ -116,13 +115,13 @@ export default function OurTeam() {
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D8C5B0] text-[#B85C3A] text-xs font-bold uppercase tracking-widest mb-6 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-[#B85C3A] animate-pulse" />
-            Leadership & Community
+            Governance & Leadership
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-[#292825]">
-            Meet the Minds Behind <span className="text-[#B85C3A]">Startup Cell</span>
+            Minds Behind the <span className="text-[#B85C3A]">Startup Cell</span>
           </h1>
-          <p className="text-[#292825]/80 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-            A passionate collective of faculty mentors, student leaders, and technical innovators dedicated to fostering venture excellence at IIIT Bhagalpur.
+          <p className="text-[#292825]/85 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+            A dedicated collective of institutional patrons, faculty coordinators, and student leaders committed to powering venture excellence at IIIT Bhagalpur.
           </p>
         </div>
       </section>
@@ -187,9 +186,9 @@ export default function OurTeam() {
                 </div>
               </div>
 
-              {/* Social Links */}
+              {/* Social / Contact Links */}
               <div className="px-6 py-4 bg-[#EEE3D4]/50 border-t border-[#D8C5B0] flex items-center justify-between">
-                <span className="text-[11px] text-[#292825] font-semibold">Connect</span>
+                <span className="text-[11px] text-[#292825] font-semibold">Institutional Contact</span>
                 <div className="flex items-center gap-3">
                   {member.linkedin && (
                     <a
@@ -238,20 +237,20 @@ export default function OurTeam() {
         <div className="mt-20 bg-[#292825] rounded-3xl p-10 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border border-[#B85C3A]/30">
           <div className="max-w-2xl">
             <span className="text-xs font-bold tracking-widest uppercase text-[#D8C5B0] bg-[#B85C3A]/20 border border-[#D8C5B0]/30 px-3 py-1 rounded-full mb-3 inline-block">
-              Recruitment Open
+              Student Cell Volunteer Recruitment
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-2 text-white">
-              Want to Join the Startup Cell Executive Team?
+              Want to Join the Startup Cell Student Team?
             </h2>
             <p className="text-[#D8C5B0] text-sm leading-relaxed">
               We recruit passionate student managers, technical leads, event organizers, and graphic designers each academic semester.
             </p>
           </div>
           <a
-            href="mailto:startupcell@iiitbh.ac.in?subject=Application%20for%20Startup%20Cell%20Team"
+            href="mailto:startupcell@iiitbh.ac.in?subject=Application%20for%20Startup%20Cell%20Student%20Team"
             className="px-8 py-3.5 rounded-full font-bold bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-md whitespace-nowrap transition-all cursor-pointer"
           >
-            Apply to Join Team →
+            Apply to Join Student Team →
           </a>
         </div>
       </section>

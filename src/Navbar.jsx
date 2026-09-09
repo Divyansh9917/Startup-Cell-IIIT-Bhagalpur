@@ -3,20 +3,30 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navItems = [
   { label: 'Home', path: '/', isSection: false },
-  { label: 'What is Startup Cell', path: '/#about', isSection: true, sectionId: 'about' },
-  { label: 'Director', path: '/#director', isSection: true, sectionId: 'director' },
+  { label: 'About', path: '/#about', isSection: true, sectionId: 'about' },
+  { label: 'Incubation & Labs', path: '/incubation', isSection: false },
+  { label: 'Startups', path: '/startups', isSection: false },
+  { label: 'Events & Gallery', path: '/gallery', isSection: false },
+  { label: 'Team', path: '/team', isSection: false },
   { label: 'Our Story', path: '/story', isSection: false },
-  { label: 'Gallery', path: '/gallery', isSection: false },
-  { label: 'Our Team', path: '/team', isSection: false },
-  { label: 'Incubation Center', path: '/incubation', isSection: false },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const [authMode, setAuthMode] = useState('login'); // 'login' or 'register'
-  const [authSubmitted, setAuthSubmitted] = useState(false);
+  const [isPitchModalOpen, setIsPitchModalOpen] = useState(false);
+  const [pitchSubmitted, setPitchSubmitted] = useState(false);
+  
+  const [pitchForm, setPitchForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    rollOrAffiliation: '',
+    startupName: '',
+    domain: 'Software / AI / SaaS',
+    brief: '',
+  });
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -57,9 +67,23 @@ export default function Navbar() {
     return location.pathname === item.path;
   };
 
-  const handleAuthSubmit = (e) => {
+  const handlePitchSubmit = (e) => {
     e.preventDefault();
-    setAuthSubmitted(true);
+    setPitchSubmitted(true);
+  };
+
+  const handleResetModal = () => {
+    setPitchSubmitted(false);
+    setIsPitchModalOpen(false);
+    setPitchForm({
+      name: '',
+      email: '',
+      phone: '',
+      rollOrAffiliation: '',
+      startupName: '',
+      domain: 'Software / AI / SaaS',
+      brief: '',
+    });
   };
 
   return (
@@ -71,7 +95,7 @@ export default function Navbar() {
             : 'bg-[#EEE3D4]/90 backdrop-blur-sm py-3.5 border-b border-[#D8C5B0]/50'
         }`}
       >
-        <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav className="max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[1850px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 2xl:px-12">
           {/* Institute Bilingual Brand Logo & Identity */}
           <Link
             to="/"
@@ -79,7 +103,7 @@ export default function Navbar() {
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Startup Cell IIIT Bhagalpur Home"
           >
-            {/* Geometric Vector Emblem */}
+            {/* Emblem */}
             <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#292825] border border-[#B85C3A]/40 p-1.5 shadow-sm group-hover:border-[#B85C3A] group-hover:scale-105 transition-all duration-300 shrink-0">
               <svg
                 viewBox="0 0 40 40"
@@ -114,15 +138,13 @@ export default function Navbar() {
               </svg>
             </div>
 
-            {/* Bilingual Institutional Typography Matching Reference Hierarchy */}
+            {/* Bilingual Institutional Typography */}
             <div className="flex flex-col text-left">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#292825] font-extrabold text-sm sm:text-base tracking-tight leading-none group-hover:text-[#B85C3A] transition-colors">
-                  Indian Institute of Information Technology Bhagalpur
-                </span>
-              </div>
-              <span className="text-[#6F6B5E] text-[10px] sm:text-[11px] font-medium tracking-wide mt-0.5">
-                भारतीय सूचना प्रौद्योगिकी संस्थान भागलपुर • Startup Cell
+              <span className="text-[#292825] font-extrabold text-xs sm:text-sm md:text-base tracking-tight leading-none group-hover:text-[#B85C3A] transition-colors">
+                IIIT Bhagalpur • Startup Cell
+              </span>
+              <span className="text-[#6F6B5E] text-[10px] sm:text-[11px] font-medium tracking-wide mt-0.5 hidden sm:inline">
+                भारतीय सूचना प्रौद्योगिकी संस्थान भागलपुर • Incubation Centre
               </span>
             </div>
           </Link>
@@ -137,7 +159,7 @@ export default function Navbar() {
                     <a
                       href={item.path}
                       onClick={(e) => handleNavClick(item, e)}
-                      className={`text-sm tracking-wide transition-all duration-200 py-1.5 px-1 relative ${
+                      className={`text-sm tracking-wide transition-all duration-200 py-1.5 px-1 relative cursor-pointer ${
                         active
                           ? 'text-[#292825] font-bold after:content-[\'\'] after:absolute after:-bottom-1 after:left-0 after:h-[2.5px] after:w-full after:bg-[#B85C3A] after:rounded-full'
                           : 'text-[#292825]/80 hover:text-[#B85C3A] font-medium after:content-[\'\'] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#B85C3A] after:transition-all after:duration-300 hover:after:w-full'
@@ -163,20 +185,19 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Desktop Action CTA: Register/Login in Terracotta */}
+          {/* Desktop Action CTA: Apply for Incubation */}
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => {
-                setAuthMode('login');
-                setAuthSubmitted(false);
-                setIsAuthOpen(true);
+                setPitchSubmitted(false);
+                setIsPitchModalOpen(true);
               }}
-              className="px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#B85C3A] text-white hover:bg-[#9E4E30] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#B85C3A] text-white hover:bg-[#9E4E30] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 cursor-pointer"
             >
               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M12 4v16m8-8H4" />
               </svg>
-              <span>Register Now</span>
+              <span>Apply for Incubation</span>
             </button>
           </div>
 
@@ -198,7 +219,7 @@ export default function Navbar() {
 
         {/* Mobile Drawer Menu */}
         {open && (
-          <div className="xl:hidden bg-[#EEE3D4] border-b border-[#D8C5B0] shadow-xl px-6 py-6 transition-all duration-300 animate-in fade-in slide-in-from-top-2">
+          <div className="xl:hidden bg-[#EEE3D4] border-b border-[#D8C5B0] shadow-xl px-6 py-6 transition-all duration-300">
             <ul className="flex flex-col gap-3">
               {navItems.map((item) => {
                 const active = isActive(item);
@@ -239,195 +260,182 @@ export default function Navbar() {
               <button
                 onClick={() => {
                   setOpen(false);
-                  setAuthMode('login');
-                  setAuthSubmitted(false);
-                  setIsAuthOpen(true);
+                  setPitchSubmitted(false);
+                  setIsPitchModalOpen(true);
                 }}
                 className="w-full py-3 text-center rounded-full font-bold text-sm bg-[#B85C3A] text-white hover:bg-[#9E4E30] shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M12 4v16m8-8H4" />
                 </svg>
-                <span>Register Now</span>
+                <span>Apply for Incubation</span>
               </button>
             </div>
           </div>
         )}
       </header>
 
-      {/* Interactive Register / Login Authentication Modal */}
-      {isAuthOpen && (
+      {/* Official Incubation Application Modal (Clean, authentic student application) */}
+      {isPitchModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[#292825]/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-in fade-in"
-          onClick={() => setIsAuthOpen(false)}
+          className="fixed inset-0 z-50 bg-[#292825]/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+          onClick={() => setIsPitchModalOpen(false)}
         >
           <div
-            className="relative max-w-md w-full bg-white rounded-3xl p-8 shadow-2xl border border-[#D8C5B0] my-8"
+            className="relative max-w-lg w-full bg-white rounded-3xl p-7 sm:p-8 shadow-2xl border border-[#D8C5B0] my-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setIsAuthOpen(false)}
+              onClick={() => setIsPitchModalOpen(false)}
               className="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#EEE3D4] text-[#292825] hover:bg-[#D8C5B0] flex items-center justify-center transition-colors font-bold cursor-pointer"
-              aria-label="Close auth modal"
+              aria-label="Close pitch modal"
             >
               ✕
             </button>
 
-            {authSubmitted ? (
+            {pitchSubmitted ? (
               <div className="text-center py-6">
-                <div className="w-16 h-16 rounded-full bg-[#D8C5B0] text-[#292825] font-extrabold text-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-[#EEE3D4] text-[#B85C3A] font-extrabold text-2xl flex items-center justify-center mx-auto mb-4 border border-[#D8C5B0]">
                   ✓
                 </div>
                 <h3 className="text-2xl font-bold text-[#292825] mb-2">
-                  {authMode === 'login' ? 'Welcome Back!' : 'Registration Initiated!'}
+                  Pitch Received!
                 </h3>
                 <p className="text-[#292825]/80 text-sm leading-relaxed mb-6">
-                  {authMode === 'login'
-                    ? 'Authenticated into Startup Cell portal. Accessing founder dashboard & cohort resources.'
-                    : 'Your founder account has been created. Please check your institutional email to verify and access incubation tools.'}
+                  Thank you for submitting your concept to the Startup Cell, IIIT Bhagalpur. Our Faculty Incubation Committee will review your submission and contact you regarding the upcoming Pitch Day.
                 </p>
                 <button
-                  onClick={() => setIsAuthOpen(false)}
+                  onClick={handleResetModal}
                   className="px-6 py-2.5 rounded-full font-bold bg-[#292825] text-white hover:bg-[#3D3B36] transition-all text-sm cursor-pointer"
                 >
-                  Go to Portal
+                  Done
                 </button>
               </div>
             ) : (
               <div>
-                {/* Header with Logo */}
                 <div className="text-center mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[#292825] border border-[#B85C3A]/40 mx-auto flex items-center justify-center mb-3 shadow-md">
-                    <svg viewBox="0 0 40 40" fill="none" className="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5L20 3Z"
-                        stroke="#D8C5B0"
-                        strokeWidth="2.5"
-                        fill="#1E1D1B"
-                      />
-                      <path d="M20 9L25 18H21.5V27L15 20H18.5L20 9Z" fill="#D8C5B0" />
-                    </svg>
-                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#B85C3A] bg-[#EEE3D4] px-3 py-1 rounded-full border border-[#D8C5B0] inline-block mb-2">
+                    Cohort 2026 Admissions
+                  </span>
                   <h3 className="text-2xl font-extrabold text-[#292825]">
-                    Startup Cell Portal
+                    Apply for Incubation Support
                   </h3>
                   <p className="text-[#6F6B5E] text-xs mt-1">
-                    IIIT Bhagalpur Innovation & Incubation Platform
+                    Startup Cell & Incubation Centre • IIIT Bhagalpur
                   </p>
                 </div>
 
-                {/* Tab Switcher: Login / Register */}
-                <div className="flex bg-[#EEE3D4] p-1 rounded-xl mb-6">
-                  <button
-                    type="button"
-                    onClick={() => setAuthMode('login')}
-                    className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                      authMode === 'login'
-                        ? 'bg-[#292825] text-white shadow-sm'
-                        : 'text-[#6F6B5E] hover:text-[#292825]'
-                    }`}
-                  >
-                    Sign In
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setAuthMode('register')}
-                    className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                      authMode === 'register'
-                        ? 'bg-[#292825] text-white shadow-sm'
-                        : 'text-[#6F6B5E] hover:text-[#292825]'
-                    }`}
-                  >
-                    Register
-                  </button>
-                </div>
+                <form onSubmit={handlePitchSubmit} className="space-y-3.5 text-left">
+                  <div>
+                    <label className="block text-xs font-semibold text-[#292825] mb-1">
+                      Applicant Name *
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder="e.g. Rahul Sharma"
+                      value={pitchForm.name}
+                      onChange={(e) => setPitchForm({ ...pitchForm, name: e.target.value })}
+                      className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                    />
+                  </div>
 
-                <form onSubmit={handleAuthSubmit} className="space-y-4 text-left">
-                  {authMode === 'register' && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-[#292825] mb-1">
-                        Full Name *
+                        College / Work Email *
                       </label>
                       <input
                         required
-                        type="text"
-                        placeholder="e.g. Rahul Verma"
-                        className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                        type="email"
+                        placeholder="student@iiitbh.ac.in"
+                        value={pitchForm.email}
+                        onChange={(e) => setPitchForm({ ...pitchForm, email: e.target.value })}
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
                       />
                     </div>
-                  )}
-
-                  <div>
-                    <label className="block text-xs font-semibold text-[#292825] mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      required
-                      type="email"
-                      placeholder="student@iiitbh.ac.in"
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-[#292825] mb-1">
-                      Password *
-                    </label>
-                    <input
-                      required
-                      type="password"
-                      placeholder="••••••••"
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
-                    />
-                  </div>
-
-                  {authMode === 'register' && (
                     <div>
                       <label className="block text-xs font-semibold text-[#292825] mb-1">
-                        Role / Designation
+                        Contact Phone *
                       </label>
-                      <select className="w-full px-4 py-2.5 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 bg-[#F7F1E8] text-[#292825]">
-                        <option>Student Founder (IIITBH)</option>
-                        <option>External Startup Founder</option>
-                        <option>Faculty / Research Scholar</option>
-                        <option>Alumni / Mentor / Angel Investor</option>
+                      <input
+                        required
+                        type="tel"
+                        placeholder="+91 98765 43210"
+                        value={pitchForm.phone}
+                        onChange={(e) => setPitchForm({ ...pitchForm, phone: e.target.value })}
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-[#292825] mb-1">
+                        Roll No. / Affiliation
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="e.g. 2101045CSE or Alumni"
+                        value={pitchForm.rollOrAffiliation}
+                        onChange={(e) => setPitchForm({ ...pitchForm, rollOrAffiliation: e.target.value })}
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-[#292825] mb-1">
+                        Venture Domain
+                      </label>
+                      <select
+                        value={pitchForm.domain}
+                        onChange={(e) => setPitchForm({ ...pitchForm, domain: e.target.value })}
+                        className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                      >
+                        <option>DeepTech & AI</option>
+                        <option>Hardware, IoT & Robotics</option>
+                        <option>CleanTech & Energy</option>
+                        <option>EdTech & SaaS</option>
+                        <option>AgriTech / HealthTech</option>
+                        <option>Other Open Track</option>
                       </select>
                     </div>
-                  )}
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-[#292825] mb-1">
+                      Startup / Project Name *
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder="e.g. NeuralDrone Systems"
+                      value={pitchForm.startupName}
+                      onChange={(e) => setPitchForm({ ...pitchForm, startupName: e.target.value })}
+                      className="w-full px-3.5 py-2.2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-[#292825] mb-1">
+                      Brief Problem & Solution Summary *
+                    </label>
+                    <textarea
+                      required
+                      rows={3}
+                      placeholder="Briefly describe what problem you are solving, target users, and what support you need from the Startup Cell..."
+                      value={pitchForm.brief}
+                      onChange={(e) => setPitchForm({ ...pitchForm, brief: e.target.value })}
+                      className="w-full px-3.5 py-2 rounded-xl border border-[#D8C5B0] text-sm focus:border-[#B85C3A] focus:outline-none focus:ring-2 focus:ring-[#B85C3A]/20 text-[#292825] bg-[#F7F1E8]"
+                    />
+                  </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl font-bold text-sm bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-md transition-all mt-2 cursor-pointer"
+                    className="w-full py-3 rounded-xl font-bold text-sm bg-[#B85C3A] text-white hover:bg-[#9E4E30] border border-[#D8C5B0]/30 shadow-md transition-all mt-2 cursor-pointer"
                   >
-                    {authMode === 'login' ? 'Sign In to Dashboard →' : 'Create Account & Register →'}
+                    Submit Pitch for Screening →
                   </button>
                 </form>
-
-                <div className="mt-5 text-center text-xs text-[#292825]/70">
-                  {authMode === 'login' ? (
-                    <p>
-                      Don't have an account?{' '}
-                      <button
-                        type="button"
-                        onClick={() => setAuthMode('register')}
-                        className="text-[#B85C3A] font-bold hover:underline cursor-pointer"
-                      >
-                        Register here
-                      </button>
-                    </p>
-                  ) : (
-                    <p>
-                      Already have an account?{' '}
-                      <button
-                        type="button"
-                        onClick={() => setAuthMode('login')}
-                        className="text-[#B85C3A] font-bold hover:underline cursor-pointer"
-                      >
-                        Sign in
-                      </button>
-                    </p>
-                  )}
-                </div>
               </div>
             )}
           </div>
