@@ -13,7 +13,7 @@ export default function DirectorDesk() {
           <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#B85C3A]/20 via-[#D8C5B0]/30 to-transparent blur-xl" />
           <div className="relative rounded-3xl overflow-hidden border border-[#D8C5B0] shadow-2xl bg-[#292825]">
             <img
-              src="/dist/assets/prof-madhusudan-singh.jpg"
+              src="/public/prof-madhusudan-singh.jpg"
               alt="Prof. Madhusudan Singh, Director, IIIT Bhagalpur"
               className="w-full h-[460px] object-cover object-top hover:scale-102 transition-transform duration-700"
             />

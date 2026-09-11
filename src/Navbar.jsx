@@ -109,7 +109,7 @@ export default function Navbar() {
             
           <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl ">
   <img
-    src="dist/assets/Indian_Institute_of_Information_Technology,_Bhagalpur_logo.png"
+    src="public/Indian_Institute_of_Information_Technology,_Bhagalpur_logo.png"
     alt="IIIT Bhagalpur Logo"
     className="w-full h-full object-contain"
   />
