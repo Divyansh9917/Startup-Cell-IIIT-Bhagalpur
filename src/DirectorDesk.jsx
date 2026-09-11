@@ -22,8 +22,7 @@ export default function DirectorDesk() {
 
               <p className="text-white font-bold text-lg">Prof. Madhusudan Singh</p>
               <p className="text-[#D8C5B0] text-xs font-semibold tracking-wider uppercase">Director, IIIT Bhagalpur</p>
-              <p className="text-white/60 text-[10px] mt-0.5">Professor of EE Department at DTU, Delhi</p>
-
+              
             </div>
           </div>
         </div>
