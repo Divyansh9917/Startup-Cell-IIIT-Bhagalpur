@@ -14,37 +14,13 @@ export default function Footer() {
           {/* Brand Col */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-[#292825] border border-[#B85C3A]/40 p-2 shadow-md">
-                <svg
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  className="w-full h-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient id="footerLogoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#B85C3A" />
-                      <stop offset="100%" stopColor="#D8C5B0" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5L20 3Z"
-                    stroke="url(#footerLogoGrad)"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="#1E1D1B"
-                    fillOpacity="0.85"
-                  />
-                  <path
-                    d="M20 9L25 18H21.5V27L15 20H18.5L20 9Z"
-                    fill="url(#footerLogoGrad)"
-                    stroke="#D8C5B0"
-                    strokeWidth="0.5"
-                  />
-                  <circle cx="20" cy="31.5" r="1.6" fill="#D8C5B0" />
-                </svg>
-              </div>
+              <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl">
+  <img
+    src="dist/assets/Indian_Institute_of_Information_Technology,_Bhagalpur_logo.png"
+    alt="IIIT Bhagalpur Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
               <div className="flex flex-col text-left">
                 <h3 className="text-white font-extrabold text-xl tracking-tight leading-none">
                   Startup<span className="text-[#B85C3A]">Cell</span>

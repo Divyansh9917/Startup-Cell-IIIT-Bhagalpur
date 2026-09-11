@@ -11,14 +11,14 @@ export default function DirectorDesk() {
           <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#B85C3A]/20 via-[#D8C5B0]/30 to-transparent blur-xl" />
           <div className="relative rounded-3xl overflow-hidden border border-[#D8C5B0] shadow-2xl bg-[#292825]">
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85"
+              src="dist/assets/prof-madhusudan-singh.jpg"
               alt="Director, Startup Cell IIIT Bhagalpur"
               className="w-full h-[460px] object-cover object-top hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#292825] via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#292825]/95 backdrop-blur-md border border-[#B85C3A]/40 shadow-lg">
-              <p className="text-white font-bold text-lg">Dr. Anjali Mehra</p>
-              <p className="text-[#D8C5B0] text-xs font-semibold tracking-wider uppercase">Director & Head of Incubation</p>
+              <p className="text-white font-bold text-lg">Prof. Madhusudan Singh</p>
+              <p className="text-[#D8C5B0] text-xs font-semibold tracking-wider uppercase">Director</p>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function DirectorDesk() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#292825] tracking-tight mb-8 leading-tight">
-            Nurturing Groundbreaking Ideas into Enduring Enterprises.
+            Leadership That Inspires Innovation.
           </h2>
 
           <div className="relative mb-8">
@@ -39,21 +39,21 @@ export default function DirectorDesk() {
               <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8z" />
             </svg>
             <blockquote className="text-[#292825] text-lg md:text-xl leading-relaxed pl-6 border-l-4 border-[#B85C3A] italic font-medium">
-              "Innovation without execution is merely a daydream. At IIIT Bhagalpur, our mission is to empower student innovators with the discipline, capital, and relentless mentorship required to transform technical curiosity into world-class market solutions."
-            </blockquote>
+              “At IIIT Bhagalpur, our vision is to create an environment where knowledge, innovation, and entrepreneurship come together to shape the leaders of tomorrow.”
+              </blockquote>
           </div>
 
           <p className="text-[#292825]/80 text-sm sm:text-base leading-relaxed mb-8">
-            The modern economy rewards agility and technological depth. Whether you are building an AI-driven SaaS platform, hardware IoT automation, or next-generation sustainable mobility, our incubation infrastructure and investor network ensure you never walk the entrepreneurial journey alone.
+            The institute is committed to fostering a culture of curiosity, research, and innovation. With strong academic foundations and an emphasis on emerging technologies, IIIT Bhagalpur continues to empower students to transform ideas into meaningful solutions for society.
           </p>
 
           <div className="flex items-center gap-4 pt-4 border-t border-[#D8C5B0]">
             <div className="w-12 h-12 rounded-full bg-[#B85C3A] border border-[#D8C5B0] flex items-center justify-center text-white font-bold text-lg shadow-sm">
-              AM
+              MS
             </div>
             <div>
-              <p className="text-[#292825] font-bold text-base">Dr. Anjali Mehra</p>
-              <p className="text-[#6F6B5E] text-xs">Ph.D. in Computer Science & Entrepreneurial Systems • IIIT Bhagalpur</p>
+              <p className="text-[#292825] font-bold text-base">Prof. Madhusudan Singh</p>
+              <p className="text-[#6F6B5E] text-xs">Professor of EE Department at DTU (Formerly Delhi College of Engineering), Delhi</p>
             </div>
           </div>
         </div>
